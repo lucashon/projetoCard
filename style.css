@@ -1,74 +1,89 @@
 @import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@500&display=swap');
-.flip-box {
-    background-color: transparent;
-    width: 245px;
-    height: 328px;
-    border: 1px solid #9f7777;
-    perspective: 1000px;
-    border-radius: 20px;
 
-
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-  .flip-box-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
+body{
+    background-color: black;
+   height: 100vh; 
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   gap: 1rem;
+}
+
+h1{
+    color: white;
     text-align: center;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
-  }
-  
 
-  .flip-box:hover .flip-box-inner {
-    transform: rotateY(180deg);
-  }
-  
+}
+h3{
+    color: black;
+    text-align: center;
+}
+.card-frente h3{
+    color: white;
+    text-align: center;
+}
+.linha{
+    border-bottom: 2px solid #ffffff;
+    width: 40%;
+}
 
-  .flip-box-front, .flip-box-back {
-    position: absolute;
+.container{
+    background-color: transparent;
+    perspective: 800px;
+
+    border-radius: 20px;
+}
+
+.card{
+    width: 250px;
+    height: 328px;
+    position: relative;
+    transform-style: preserve-3d; /*Preserva*/
+    transition: transform 1s ease-in-out;
+}
+.card-frente{
+    background-image: url(assets/perfil.png);
+    border-radius: 20px;
+    opacity: 90%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-frente, 
+.card-costas{
     width: 100%;
     height: 100%;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-  }
-
-  .flip-box-front {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: .5rem;
-    font-family: 'Wix Madefor Display', sans-serif;
-    background-color:#9f7777 ;
-    border-radius: 20px;
-    /* background-color: rgba(0, 0, 0, 0.064); */
-    background-size: cover;
-    color: black;
-    
+    position: absolute;
+    backface-visibility: hidden; /*Para não ver a parte de tras*/
 }
-  
 
-  .flip-box-back {
+.card-costas{
+    background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: .5rem;
+    gap: 1rem;
     font-family: 'Wix Madefor Display', sans-serif;
-    background-color: transparent;
-    color: black;
+    border-radius: 20px;
     transform: rotateY(180deg);
-  }
-  .flip-box-back h2{
-    font-size: 1.2rem;
-  }
+}
+.card:hover{
+ transform: rotateY(180deg);
+}
 
-  .linha{
-    border-top: 1px solid white ;
-    width: 40%;
-  }
-  .icones{
+.icones{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -77,17 +92,40 @@
     
 
   }
-  .icon img{
-    width: 2rem;
-    height: 2rem; 
-  }
-  
-  .insta{
 
-    width: 2rem;
-    height: 2rem
-  }
-  a{
-    width: 2rem;
-    height: 2rem
-  }
+.icon img{
+  width: 2rem;
+  height: 2rem; 
+}
+
+.insta{
+
+  width: 2rem;
+  height: 2rem
+}
+a{
+  width: 2rem;
+  height: 2rem
+}
+
+
+/* LIKE */
+
+button{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:  center ;
+    gap: 1em;
+    width: 5rem;
+    height: 2rem;
+    padding: .3rem;
+    background-color: black;
+    border: 2px solid white;
+    color: rgb(255, 255, 255);
+
+}
+#coracao{
+    font-size: 1.5rem;
+    padding-bottom: 3px;
+}
